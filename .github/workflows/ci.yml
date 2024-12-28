@@ -1,0 +1,45 @@
+name: Setup Linux Mint Debian Edition
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup VirtualBox
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y virtualbox
+
+    - name: Setup Vagrant
+      run: |
+        sudo apt-get install -y vagrant
+
+    - name: Configure Vagrant
+      run: |
+        vagrant init LMDE_VirtualBox
+        vagrant up
+
+    - name: Install Git
+      run: |
+        sudo apt-get install -y git
+
+    - name: Clone GitHub repo
+      run: |
+        git clone https://github.com/yourusername/yourrepository.git
+        cd yourrepository
+
+    - name: Verify Installation
+      run: |
+        vagrant ssh -c "git --version"
+        vagrant ssh -c "VBoxManage --version"
