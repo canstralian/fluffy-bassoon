@@ -66,8 +66,7 @@ pytest --cov=.
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
 ## Community
-- Join our [Discord](https://discord.gg/your-invite-link) for support and discussions.
-- Follow us on [Twitter](https://twitter.com/your-twitter-handle).
+- Follow us on [Twitter](https://twitter.com/dotcomhunters).
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
