@@ -27,7 +27,7 @@ jobs:
 
     - name: Configure Vagrant
       run: |
-        vagrant init LMDE_VirtualBox
+        vagrant init https://example.com/path/to/LMDE_VirtualBox.box
         vagrant up
 
     - name: Install Git
