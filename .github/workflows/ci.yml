@@ -1,45 +1,10 @@
-name: Setup Linux Mint Debian Edition
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.8'  # Replace with your desired version
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  setup:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Setup VirtualBox
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y virtualbox
-
-    - name: Setup Vagrant
-      run: |
-        sudo apt-get install -y vagrant
-
-    - name: Configure Vagrant
-      run: |
-        vagrant init https://example.com/path/to/LMDE_VirtualBox.box
-        vagrant up
-
-    - name: Install Git
-      run: |
-        sudo apt-get install -y git
-
-    - name: Clone GitHub repo
-      run: |
-        git clone https://github.com/yourusername/yourrepository.git
-        cd yourrepository
-
-    - name: Verify Installation
-      run: |
-        vagrant ssh -c "git --version"
-        vagrant ssh -c "VBoxManage --version"
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt  
