@@ -1,0 +1,35 @@
+name: Push to Hugging Face Hub
+
+on:
+  push:
+    branches:
+      - "main" 
+
+jobs:
+  push_to_hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9" 
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pip install huggingface_hub
+
+      - name: Login to Hugging Face Hub
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.token = '${{ secrets.HUGGING_FACE_TOKEN }}'
+            print(github.token) 
+            
+      - name: Push model to Hugging Face Hub
+        run: |
+          python -m huggingface_hub --repo <your_hugging_face_username>/<your_model_name> upload .
