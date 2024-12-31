@@ -2,6 +2,12 @@
 
 [![Build Status](https://github.com/canstralian/fluffy-bassoon/actions/workflows/ci.yml/badge.svg)](https://github.com/canstralian/fluffy-bassoon/actions)
 [![Test Coverage](https://codecov.io/gh/canstralian/fluffy-bassoon/branch/main/graph/badge.svg)](https://codecov.io/gh/canstralian/fluffy-bassoon)
+![GitHub Issues](https://img.shields.io/github/issues/canstralian/fluffy-bassoon.svg)
+![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Contributors](https://img.shields.io/github/contributors/canstralian/fluffy-bassoon.svg)
+![Stars](https://img.shields.io/github/stars/canstralian/fluffy-bassoon.svg)
+![Forks](https://img.shields.io/github/forks/canstralian/fluffy-bassoon.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 > A comprehensive tool for analyzing and identifying security vulnerabilities in blockchain smart contracts.
 
