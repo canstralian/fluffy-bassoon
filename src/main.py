@@ -35,7 +35,7 @@ def scan_directory(directory):
             content = file.read()
 
             # Check for hardcoded sensitive information (e.g., passwords)
-            if re.search(r'password\s*=\s*["\'].*["\']', content, re.IGNORECASE):
+            if re.search(r'password\s*=\s*[\"\'].*[\"\']', content, re.IGNORECASE):
                 file_vulnerabilities.append('Hardcoded password detected.')
 
             # Check for the use of insecure functions
